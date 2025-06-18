@@ -19,7 +19,6 @@
   git --version
 
 4. Настройка Git (один раз)
-git config --global user.name "Ваше имя"
 git config --global user.email "ваш@email.com"
 
 Основные команды
