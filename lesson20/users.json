@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Alice Johnson",
+        "city": "New York"
+    },
+    {
+        "name": "Bob Smith",
+        "city": "Los Angeles"
+    },
+    {
+        "name": "Charlie Brown",
+        "city": "Chicago"
+    },
+    {
+        "name": "David Wilson",
+        "city": "Houston"
+    },
+    {
+        "name": "Eva Davis",
+        "city": "Phoenix"
+    },
+    {
+        "name": "Anna Lee",
+        "city": "San Francisco"
+    },
+    {
+        "name": "Dmitry Ivanov",
+        "city": "Moscow"
+    },
+    {
+        "name": "Elena Petrova",
+        "city": "Saint Petersburg"
+    },
+    {
+        "name": "Lucas White",
+        "city": "London"
+    },
+    {
+        "name": "Sophia Green",
+        "city": "Berlin"
+    }
+]

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио Тактикал12</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #0f1123;
+            color: white;
+        }
+        header {
+            background-color: #fdea00;
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+        }
+        header img {
+            border-radius: 50%;
+            width: 250px;
+            margin-right: 2rem;
+        }
+        .intro-text {
+            color: black;
+        }
+        .portfolio-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .highlight {
+            color: #fdea00;
+        }
+        .button {
+            background-color: #fdea00;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            padding: 2rem;
+            justify-items: center;
+        }
+
+        .grid img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #fdea00;
+            color: black;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        footer input, footer textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border: none;
+        }
+        footer .contacts {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .img- {
+            max-height: 460px;
+            max-width: 460px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="photo/main.jpeg" alt="Шабданбек">
+        <div class="intro-text">
+            <p>Привет! Я <strong>Шабданбек</strong>,</p>
+            <p>известный как <strong>Тактикал12</strong> </p>
+            <p>— разработчик программного обеспечения,</p>
+            <p>веб-сайтов и мобильных приложений.</p>
+            <p>Помогаю идеям превращаться в цифровую реальность с 2025 года.></p>
+        </div>
+    </header>
+
+    <div class="portfolio-title">портфолио</div>
+
+    <section>
+        <h2><span class="highlight">Дизайн и Разработка</span> — снаружи красиво, внутри умно.</h2>
+        <p>Я создаю эффективные и современные цифровые продукты: от приложений до адаптивных веб-платформ.<p/>
+        <p> Использую только актуальные технологии и ориентируюсь на пользовательский опыт.</p>
+        <button class="button">Скачать резюме</button>
+    </section>
+
+    <div class="grid">
+        <img class="img-" src="photo/first.jpeg" alt="ПО">
+        <img class="img-" src="photo/second.jpeg" alt="Web">
+        <img class="img-" src="photo/third.jpeg" alt="Mobile">
+        <img class="img-" src="photo/fifth.jpeg" alt="Web">
+        <img class="img-" src="photo/sixth.jpeg" alt="Design">
+        <img class="img-" src="photo/fourth.jpeg" alt="ПО">
+    </div>
+
+    <footer>
+        <h2>Связаться с нами</h2>
+        <form>
+            <input type="text" placeholder="Ваше имя">
+            <input type="email" placeholder="Ваш email">
+            <textarea rows="4" placeholder="Ваше сообщение..."></textarea>
+            <button class="button" type="submit">Отправить</button>
+        </form>
+        <div class="contacts">
+            <p>WhatsApp: <a href="https://wa.me/79779055554">+7 977 905 5554</a></p>
+            <p>Instagram: <a href="https://instagram.com/sm_12.1" target="_blank">@sm_12.1</a></p>
+        </div>
+    </footer>
+</body>
+</html>

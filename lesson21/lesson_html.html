@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 21: Введение в HTML</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; margin:0; padding:0; }
+    .container { max-width:800px; background:#fff; margin:40px auto; padding:20px 30px; box-shadow:0 2px 8px rgba(0,0,0,0.1); border-radius:8px; }
+    h1,h2 { color:#2c3e50; }
+    h1 { text-align:center; }
+    section { margin-top:30px; }
+    p, ul, ol, dl, a, img, iframe, form, input, textarea, select, div, span, pre, code, footer { margin:15px 0; }
+    pre { background:#2c3e50; color:#ecf0f1; padding:15px; overflow-x:auto; border-radius:4px; white-space:pre-wrap; }
+    code { background:#ecf0f1; color:#333; padding:2px 4px; border-radius:4px; font-family:Consolas,monospace; }
+    footer.bottom { text-align:center; margin-top:40px; font-size:0.9em; color:#7f8c8d; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Урок 21: Введение в HTML</h1>
+
+    <section>
+      <h2>1. Доктайп и корневой элемент</h2>
+      <p><code>&lt;!DOCTYPE html&gt;</code> указывает браузеру, что документ использует HTML5. <code>&lt;html lang="ru"&gt;</code> — корневой элемент страницы.</p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+  ...
+&lt;/html&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>2. Секция <code>&lt;head&gt;</code> и метаданные</h2>
+      <p>Содержит метатеги, <code>&lt;title&gt;</code>, подключение стилей/скриптов. Важна для SEO и работы браузера.</p>
+      <pre><code>&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="description" content="Урок HTML"&gt;
+  &lt;meta name="keywords" content="HTML, урок"&gt;
+  &lt;meta name="author" content="Преподаватель"&gt;
+  &lt;title&gt;Урок 21&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>3. Тело документа <code>&lt;body&gt;</code></h2>
+      <p>Содержит весь видимый контент: текст, изображения, ссылки, формы.</p>
+      <pre><code>&lt;body&gt;
+  &lt;h1&gt;Привет, мир!&lt;/h1&gt;
+  &lt;p&gt;Текст абзаца.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>4. Заголовки <code>&lt;h1&gt;–&lt;h6&gt;</code></h2>
+      <p>Уровни заголовков от <code>h1</code> (самый важный) до <code>h6</code> (наименее важный).</p>
+      <div>
+        <h1>Заголовок H1</h1>
+        <h2>Заголовок H2</h2>
+        <h3>Заголовок H3</h3>
+        <h4>Заголовок H4</h4>
+        <h5>Заголовок H5</h5>
+        <h6>Заголовок H6</h6>
+      </div>
+      <pre><code>&lt;h1&gt;Заголовок H1&lt;/h1&gt;
+&lt;h2&gt;Заголовок H2&lt;/h2&gt;
+... до H6</code></pre>
+    </section>
+
+    <section>
+      <h2>5. Параграфы <code>&lt;p&gt;</code></h2>
+      <p>Отображает абзац текста с отступами.</p>
+      <div>
+        <p>Первый абзац.</p>
+        <p>Второй абзац.</p>
+      </div>
+      <pre><code>&lt;p&gt;Первый абзац.&lt;/p&gt;
+&lt;p&gt;Второй абзац.&lt;/p&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>6. Ссылки <code>&lt;a&gt;</code></h2>
+      <p>Гиперссылки: <code>href</code> — адрес, <code>target="_blank"</code> — открыть в новой вкладке.</p>
+      <div>
+        <a href="https://example.com" target="_blank">Пример ссылки</a>
+      </div>
+      <pre><code>&lt;a href="https://example.com" target="_blank"&gt;Пример ссылки&lt;/a&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>7. Изображения <code>&lt;img&gt;</code></h2>
+      <p>Вставка изображения: <code>src</code> — путь, <code>alt</code> — описание.</p>
+      <div>
+        <img src="https://via.placeholder.com/150" alt="Пример">
+      </div>
+      <pre><code>&lt;img src="https://via.placeholder.com/150" alt="Пример"&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>8. Списки: <code>&lt;ul&gt;, &lt;ol&gt;, &lt;dl&gt;</code></h2>
+      <p>Неупорядоченные (<code>ul</code>), упорядоченные (<code>ol</code>) и описательные списки (<code>dl</code>, <code>dt</code>, <code>dd</code>).</p>
+      <div>
+        <ul>
+          <li>Пункт списка 1</li>
+          <li>Пункт списка 2</li>
+        </ul>
+        <ol>
+          <li>Первый элемент</li>
+          <li>Второй элемент</li>
+        </ol>
+        <dl>
+          <dt>Термин</dt>
+          <dd>Описание термина</dd>
+        </dl>
+      </div>
+      <pre><code>&lt;ul&gt;
+  &lt;li&gt;Пункт списка 1&lt;/li&gt;
+  &lt;li&gt;Пункт списка 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Первый элемент&lt;/li&gt;
+  &lt;li&gt;Второй элемент&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Термин&lt;/dt&gt;
+  &lt;dd&gt;Описание термина&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>9. Формы: <code>&lt;form&gt;, &lt;input&gt;, &lt;textarea&gt;, &lt;select&gt;</code></h2>
+      <p>Формы для ввода данных. Пример веб-отображения формы:</p>
+      <div>
+        <form action="#" method="post">
+          <input type="text" name="username" placeholder="Имя пользователя"><br>
+          <input type="email" name="email" placeholder="Email"><br>
+          <textarea name="message">Введите сообщение...</textarea><br>
+          <select name="options">
+            <option value="1">Опция 1</option>
+            <option value="2">Опция 2</option>
+          </select>
+        </form>
+      </div>
+      <pre><code>&lt;form action="#" method="post"&gt;
+  &lt;input type="text" name="username" placeholder="Имя пользователя"&gt;
+  &lt;input type="email" name="email" placeholder="Email"&gt;
+  &lt;textarea name="message"&gt;Введите сообщение...&lt;/textarea&gt;
+  &lt;select name="options"&gt;
+    &lt;option value="1"&gt;Опция 1&lt;/option&gt;
+    &lt;option value="2"&gt;Опция 2&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>10. Семантические теги: <code>&lt;main&gt;, &lt;aside&gt;, &lt;figure&gt;, &lt;figcaption&gt;</code></h2>
+      <p>Эти теги улучшают структуру и доступность контента.</p>
+      <div>
+        <main>Основной контент</main>
+        <aside>Боковая панель</aside>
+        <figure>
+          <img src="https://via.placeholder.com/100" alt="Изображение">
+          <figcaption>Подпись к изображению</figcaption>
+        </figure>
+      </div>
+      <pre><code>&lt;main&gt;Основной контент&lt;/main&gt;
+&lt;aside&gt;Боковая панель&lt;/aside&gt;
+&lt;figure&gt;
+  &lt;img src="https://via.placeholder.com/100" alt="Изображение"&gt;
+  &lt;figcaption&gt;Подпись к изображению&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>11. Блоки и строчные элементы: <code>&lt;div&gt; и &lt;span&gt;</code></h2>
+      <p><code>div</code> — блочный контейнер, <code>span</code> — строчный, используются для группировки элементов.</p>
+      <div>
+        <div style="background:#eee;padding:5px;">Это блочный div</div>
+        <span style="color:red;">Это строчный span</span>
+      </div>
+      <pre><code>&lt;div style="background:#eee;padding:5px;"&gt;Это блочный div&lt;/div&gt;
+&lt;span style="color:red;"&gt;Это строчный span&lt;/span&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>12. Код: <code>&lt;code&gt;</code> и <code>&lt;pre&gt;</code></h2>
+      <p><code>code</code> — для коротких фрагментов кода, <code>pre</code> — для блоков с сохранением форматирования.</p>
+      <div>
+        <p>Пример inline: <code>console.log()</code></p>
+        <pre>function test() {
+  console.log('Hello');
+}</pre>
+      </div>
+      <pre><code>&lt;p&gt;Inline <code&gt;консоль&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;function test() {...}&lt;/pre&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>13. Подвал: <code>&lt;footer&gt;</code></h2>
+      <p><code>footer</code> содержит контактную или авторскую информацию внизу страницы.</p>
+      <div>
+        <footer>Контакты: info@example.com | © 2025</footer>
+      </div>
+      <pre><code>&lt;footer&gt;Контакты: info@example.com | © 2025&lt;/footer&gt;</code></pre>
+    </section>
+
+    <footer class="bottom">© 2025 Учимся HTML — простой и понятный урок</footer>
+  </div>
+</body>
+</html>

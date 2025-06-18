@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 22: Основы CSS</title>
+  <style>
+    /* Общие стили */
+    body { font-family: Arial, sans-serif; background:#f0f0f0; color:#333; margin:0; padding:0; }
+    .container { max-width:900px; margin:40px auto; background:#fff; padding:20px 30px; border-radius:8px;
+                 box-shadow:0 2px 8px rgba(0,0,0,0.1); position: relative; }
+    h1, h2 { color:#2c3e50; }
+    h1 { text-align:center; }
+    section { margin-top:30px; }
+    p, ul, pre, code, footer { margin:15px 0; }
+
+    /* Кодовые блоки */
+    pre { background:#2c3e50; color:#ecf0f1; padding:15px; border-radius:4px;
+          overflow-x:auto; white-space:pre-wrap; word-wrap:break-word; }
+    pre code { background:transparent; display:block; padding:0; white-space:pre-wrap; }
+    code { background:#ecf0f1; padding:2px 4px; font-family:Consolas,monospace; border-radius:4px; }
+    footer.bottom { text-align:center; margin-top:40px; font-size:0.9em; color:#7f8c8d; }
+
+    /* Helpers для демонстраций */
+    .demo { padding:10px; background:#ecf0f1; border:1px solid #ccc; }
+    .demo-box { width:100px; height:100px; background:#3498db; color:#fff;
+                 display:flex; align-items:center; justify-content:center; margin:5px; }
+    .demo-flex { display:flex; gap:10px; }
+    .demo-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    @media(max-width:600px) { .responsive { flex-direction:column; } .grid-responsive { grid-template-columns:1fr; } }
+
+    /* Позиционирование текста */
+    .text-align { text-align:center; border:1px dashed #999; padding:10px; }
+    .text-indent { text-indent:30px; border:1px dashed #999; padding:10px; }
+    .line-height { line-height:2; border:1px dashed #999; padding:10px; }
+    .text-valign { display:flex; align-items:center; height:100px; border:1px dashed #999; justify-content:flex-start; }
+    .text-hvcenter { display:flex; align-items:center; justify-content:center; height:100px; border:1px dashed #999; }
+
+    /* Позиционирование блока */
+    .pos-block { position:absolute; top:10px; right:10px; bottom:10px; left:10px;
+                 background:rgba(52,152,219,0.2); border:1px solid #3498db; }
+
+    /* Псевдоклассы и псевдоэлементы */
+    .pseudo-demo a:hover { color:#e74c3c; }
+    .pseudo-demo p::first-letter { font-size:2em; font-weight:bold; }
+    .pseudo-demo li:nth-child(even) { background:#dfe6e9; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Урок 22: Основы CSS (дополненный)</h1>
+
+    <section>
+      <h2>1. Что такое CSS</h2>
+      <p>CSS (Cascading Style Sheets) — это язык описания внешнего вида HTML-документов. Он отделяет содержимое (HTML) от оформления (CSS), что упрощает поддержку и масштабирование веб-страниц. С помощью CSS задаются:</p>
+      <ul>
+        <li>Цвета текста и фона</li>
+        <li>Шрифты и размеры текста</li>
+        <li>Отступы (margin, padding)</li>
+        <li>Расположение элементов (display, position)</li>
+        <li>Анимации и переходы</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Подключение CSS</h2>
+      <p>Стили можно подключить тремя способами:</p>
+      <ul>
+        <li>Внешний файл: подходит для крупных сайтов, обеспечивает кэширование браузером.</li>
+        <li>Внутренний стиль: удобно для одного документа или небольших правок.</li>
+        <li>Inline-стили: используются редко, только для быстрого локального изменения.</li>
+      </ul>
+      <pre><code>&lt;!-- Внешний CSS --&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+
+&lt;!-- Внутренний в head --&gt;
+&lt;style&gt;
+  body { background: #f0f0f0; }
+&lt;/style&gt;
+
+&lt;!-- Inline --&gt;
+&lt;p style="font-size:18px;"&gt;Пример&lt;/p&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>3. Селекторы</h2>
+      <p>Селекторы определяют, к каким элементам применятся стилевые правила:</p>
+      <ul>
+        <li><strong>Теговые</strong>: применяются ко всем элементам указанного тега (<code>p {}</code>).</li>
+        <li><strong>Классовые</strong>: выбирают элементы с определенным классом (<code>.classname {}</code>).</li>
+        <li><strong>ID</strong>: уникальный селектор одного элемента (<code>#idname {}</code>).</li>
+        <li><strong>Комбинаторы</strong>: выбор по структуре документа (<code>ul li {}</code>, <code>div > p {}</code>).</li>
+        <li><strong>Псевдоклассы</strong>: поведение при наведении, активном состоянии (<code>a:hover {}</code>).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Свойства текста и шрифтов</h2>
+      <p>С помощью CSS можно управлять визуальными характеристиками текста:</p>
+      <ul>
+        <li><code>font-family</code> — семейство шрифта</li>
+        <li><code>font-size</code> — размер текста</li>
+        <li><code>font-weight</code> — толщина шрифта</li>
+        <li><code>line-height</code> — межстрочный интервал</li>
+        <li><code>color</code>, <code>text-decoration</code> — цвет и оформление текста</li>
+      </ul>
+      <pre><code>body {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: #2980b9;
+}
+a:hover {
+  text-decoration: underline;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>5. Цвета и фоны</h2>
+      <p>Цвета задаются в различных форматах: шестнадцатеричный (<code>#3498db</code>), RGB (<code>rgb(52,152,219)</code>), RGBA для прозрачности. Фон может быть сплошным, градиентом или изображением.</p>
+      <pre><code>body { background-color: #ffffff; }
+.header { background: linear-gradient(to right, #3498db, #2ecc71); color: #fff; }
+.alert { background-color: yellow; }</code></pre>
+    </section>
+
+    <section>
+      <h2>6. Box Model</h2>
+      <p>Каждый элемент представлен коробкой, состоящей из:</p>
+      <ul>
+        <li><strong>Content</strong> — само содержимое (текст, изображения)</li>
+        <li><strong>Padding</strong> — внутренние отступы между содержимым и рамкой</li>
+        <li><strong>Border</strong> — рамка вокруг элемента</li>
+        <li><strong>Margin</strong> — внешние отступы между рамкой и соседними элементами</li>
+      </ul>
+      <pre><code>.box {
+  width: 200px;
+  padding: 10px;
+  border: 2px solid #333;
+  margin: 20px;
+}
+</code></pre>
+    </section>
+
+    <section>
+      <h2>7. Display и позиционирование</h2>
+      <p><code>display</code> задает, как элемент ведет себя в потоке документа (block, inline, inline-block, flex, grid). <code>position</code> определяет, как элемент позиционируется относительно родительского контейнера или окна браузера.</p>
+      <div class="demo-flex demo">
+        <div class="demo-box">block</div>
+        <div class="demo-box" style="display:inline-block;">inline-block</div>
+        <span class="demo-box" style="display:inline;">inline</span>
+      </div>
+      <pre><code>.demo-box { width:100px; height:100px; background:#3498db; }
+.demo-box { display:block; }
+span { display:inline; }</code></pre>
+      <div class="demo" style="position:relative; height:200px; background:#ecf0f1;">
+        <div class="pos-block">Расположен со всех сторон</div>
+      </div>
+      <pre><code>.pos-block {
+  position:absolute;
+  top:10px;
+  right:10px;
+  bottom:10px;
+  left:10px;
+  background:rgba(52,152,219,0.2);
+  border:1px solid #3498db;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>8. Flexbox Basics</h2>
+      <p>Flexbox — удобный способ выстраивать элементы в ряд или столбец с гибким распределением пространства между ними.</p>
+      <div class="demo-flex responsive demo">
+        <div class="demo-box">1</div>
+        <div class="demo-box" style="background:#9b59b6;">2</div>
+        <div class="demo-box" style="background:#e67e22;">3</div>
+      </div>
+      <pre><code>.demo-flex { display:flex; gap:10px; }
+.responsive { flex-direction:row; justify-content:space-between; align-items:center; }
+@media(max-width:600px) { .responsive { flex-direction:column; } }</code></pre>
+    </section>
+
+    <section>
+      <h2>9. CSS Grid Basics</h2>
+      <p>Grid-layout позволяет создавать двухмерные сетки с явным заданием строк и столбцов.</p>
+      <div class="demo-grid grid-responsive demo">
+        <div class="demo-box">A</div>
+        <div class="demo-box" style="background:#1abc9c;">B</div>
+        <div class="demo-box" style="background:#f1c40f;">C</div>
+        <div class="demo-box" style="background:#e74c3c;">D</div>
+      </div>
+      <pre><code>.demo-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.grid-responsive { grid-template-columns:1fr 1fr; }
+@media(max-width:600px) { .grid-responsive { grid-template-columns:1fr; } }</code></pre>
+    </section>
+
+    <section>
+      <h2>10. Псевдоклассы и псевдоэлементы</h2>
+      <p>Псевдоклассы (<code>:hover</code>, <code>:nth-child()</code>, <code>:active</code>) применяются к реальным элементам в определённых состояниях. Псевдоэлементы (<code>::before</code>, <code>::after</code>, <code>::first-letter</code>) создают виртуальные дочерние элементы.</p>
+      <ul class="pseudo-demo demo">
+        <li><a href="#">Наведи на меня (:hover)</a></li>
+        <li>Элемент 2</li>
+        <li>Элемент 3</li>
+        <li>Элемент 4</li>
+      </ul>
+      <pre><code>a:hover { color:#e74c3c; }
+li:nth-child(even) { background:#dfe6e9; }
+p::first-letter { font-size:2em; font-weight:bold; }</code></pre>
+    </section>
+
+    <section>
+      <h2>11. Позиционирование текста</h2>
+      <p>Управление текстом: выравнивание по горизонтали и вертикали, отступ первой строки и межстрочный интервал.</p>
+      <div class="demo text-align">Горизонтально центрированный</div>
+      <pre><code>.text-align { text-align:center; }</code></pre>
+      <div class="demo text-valign">Вертикально по центру</div>
+      <pre><code>.text-valign { display:flex; align-items:center; height:100px; }</code></pre>
+      <div class="demo text-hvcenter">Горизонтально и вертикально центрированный</div>
+      <pre><code>.text-hvcenter { display:flex; align-items:center; justify-content:center; height:100px; }</code></pre>
+      <div class="demo text-indent">  Отступ первой строки</div>
+      <pre><code>.text-indent { text-indent:30px; }</code></pre>
+      <div class="demo line-height">Текст с увеличенным междустрочным интервалом.</div>
+      <pre><code>.line-height { line-height:2; }</code></pre>
+    </section>
+
+    <footer class="bottom">© 2025 Учимся CSS — расширенный курс по layout и стилизации</footer>
+  </div>
+</body>
+</html>

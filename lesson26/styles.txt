@@ -1,0 +1,89 @@
+1. Шрифты и текст
+font-family: Определяет шрифт для текста.
+
+font-size: Задает размер шрифта.
+
+font-weight: Устанавливает толщину шрифта (например, normal, bold).
+
+font-style: Определяет стиль шрифта (например, italic, normal).
+
+text-align: Устанавливает выравнивание текста (например, left, right, center).
+
+line-height: Задает высоту строки.
+
+letter-spacing: Определяет интервал между буквами.
+
+text-transform: Преобразует текст (например, uppercase, lowercase).
+
+2. Цвета и фоны
+color: Устанавливает цвет текста.
+
+background-color: Задает цвет фона элемента.
+
+background-image: Устанавливает изображение фона.
+
+background-size: Определяет размер фона (например, cover, contain).
+
+background-repeat: Устанавливает, будет ли фон повторяться (например, repeat, no-repeat).
+
+opacity: Устанавливает прозрачность элемента.
+
+3. Поля и отступы
+margin: Отступы вокруг элемента (например, margin-top, margin-right, margin-bottom, margin-left).
+
+padding: Отступы внутри элемента (например, padding-top, padding-right, padding-bottom, padding-left).
+
+border: Устанавливает границу для элемента (например, border: 1px solid black).
+
+border-radius: Закругляет углы элемента.
+
+4. Размеры и позиции
+width: Задает ширину элемента.
+
+height: Задает высоту элемента.
+
+max-width / min-width: Ограничивает максимальную или минимальную ширину.
+
+max-height / min-height: Ограничивает максимальную или минимальную высоту.
+
+position: Устанавливает способ позиционирования элемента (static, relative, absolute, fixed, sticky).
+
+top, right, bottom, left: Определяют позицию элемента при использовании position.
+
+z-index: Устанавливает порядок наложения элементов (например, z-index: 10).
+
+5. Сеточные и блочные элементы
+display: Устанавливает тип отображения элемента (block, inline, inline-block, flex, grid, none).
+
+flex: Свойства для использования Flexbox (например, display: flex, justify-content, align-items, flex-wrap).
+
+grid: Свойства для использования CSS Grid (например, display: grid, grid-template-columns, grid-template-rows).
+
+6. Стили для ссылок
+text-decoration: Добавляет подчеркивание или другие стили к ссылке (underline, none).
+
+cursor: Устанавливает стиль курсора (например, pointer, default).
+
+7. Плавность и анимация
+transition: Устанавливает анимации для переходов между состояниями элементов (например, transition: all 0.3s ease).
+
+animation: Создает анимацию для элемента (например, animation: move 2s infinite).
+
+@keyframes: Определяет ключевые кадры для анимации.
+
+8. Тени и эффекты
+box-shadow: Добавляет тень для элемента (например, box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1)).
+
+text-shadow: Добавляет тень для текста.
+
+9. Стили для элементов формы
+input[type="text"]: Стиль для текстовых полей.
+
+input[type="submit"]: Стиль для кнопок отправки.
+
+select, option: Стили для выпадающих списков.
+
+textarea: Стиль для текстовых областей.
+
+10. Медиа-запросы
+@media: Используется для адаптивных стилей (например, @media screen and (max-width: 768px) для мобильных устройств).
